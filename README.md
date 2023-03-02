@@ -9,13 +9,13 @@ anumite variabile din cauza numarului redus de registre disponibile.
 salvez continutul registrului `eax` pe stiva si prin "scot `eax` de pe 
 stiva" inteleg ca pun in `eax` continutul din varful stivei.
 
-# Problema 1
+# Rotp
 Am construit textul `ciphertext` cu ajutorul buclei
 `build_ciphertext` care itereaza prin `plaintext` si salveaza
 in `ciphertext` textul modificat cu ajutorul cheii, respectand
 formula din cerinta: `ciphertext[i] = plaintext[i] ^ key[len-i-1]`.
 
-# Problema 2
+# Ages
 Am construit vectorul `all_ages` parcurgand vectorul
 `dates` si folosind formula `all_ages[i] = present->year - dates[i].year`, 
 exceptie facand cazurile in care ziua de nastere nu a fost inca;
@@ -23,7 +23,7 @@ in acest caz, `all_ages[i] = present->year - dates[i].year - 1`.
 De asemenea, pentru `all_ages[i] < 0`, am pus `all_ages[i] = 0`, conform 
 cerintei.
 
-# Problema 3
+# Columnar
 Pentru a implementa modelul prezentat in cerinta, am
 gandit matricea descrisa ca pe un vector. Am parcurs vectorul `key`, 
 si la fiecare iteratie, pentru a lua toate elementele de pe coloana 
@@ -31,7 +31,7 @@ si la fiecare iteratie, pentru a lua toate elementele de pe coloana
 proprietatea `j % len_cheie == key[i]`. La final, am pus terminatorul 
 `'\0'` la finalul vectorului obtinut, `ciphertext`.
 
-# Problema 4
+# Cache
 Am urmat algoritmul de load descris in cerinta:
 am calculat tagul aferent adresei primite (am siftat la dreapta 
 cu 3 pozitii adresa) si l-am cautat in vectorul `tags`. 
